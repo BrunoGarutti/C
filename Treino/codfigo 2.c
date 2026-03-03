@@ -6,9 +6,9 @@ int main() {
     scanf("%d",&a);
     
     if ( a % 2 == 0 ){
-        printf("PAR \n");
+        printf("O numero digitado é par \n");
     } else {
-        printf("IMPAR \n");
+        printf("O numero digitado é impar \n");
     }
     return 0;
 }
