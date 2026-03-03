@@ -1,5 +1,73 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(){
+#define MAX_MATERIAS 100 // Limite máximo de matérias
+
+int main() {
+    int opcao;
+    int totalMaterias = 0;
+    
+    // Arrays para armazenar os dados
+    char nomes[MAX_MATERIAS][50]; 
+    float notas[MAX_MATERIAS];
+    float somaTotal = 0;
+
+    while (1) {
+        printf("\n--- SISTEMA DE NOTAS ---\n");
+        printf("1 - Adicionar Materia e Nota\n");
+        printf("2 - Ver Media Geral\n");
+        printf("3 - Ver Boletim Detalhado\n");
+        printf("0 - Sair\n");
+        printf("Escolha: ");
+        scanf("%d", &opcao);
+
+        if (opcao == 0) break;
+
+        switch (opcao) {
+            case 1:
+                if (totalMaterias < MAX_MATERIAS) {
+                    printf("Nome da materia (sem espacos): ");
+                    scanf("%s", nomes[totalMaterias]); // Salva o nome no array de nomes
+                    
+                    printf("Nota da materia: ");
+                    scanf("%f", &notas[totalMaterias]); // Salva a nota no array de notas
+                    
+                    somaTotal += notas[totalMaterias];
+                    totalMaterias++;
+                    printf("Cadastrado com sucesso!\n");
+                } else {
+                    printf("Limite de materias atingido!\n");
+                }
+                break;
+
+            case 2:
+                if (totalMaterias > 0) {
+                    printf("\nMedia Geral: %.2f\n", somaTotal / totalMaterias);
+                } else {
+                    printf("\nNenhuma materia cadastrada.\n");
+                }
+                break;
+
+            case 3:
+                if (totalMaterias > 0) {
+                    printf("\n--- BOLETIM DETALHADO ---\n");
+                    printf("%s | %s\n", "MATERIA", "NOTA");
+                    printf("----------------------------------\n");
+                    
+                    // Loop para percorrer os arrays e mostrar cada item
+                    for (int i = 0; i < totalMaterias; i++) {
+                        printf("%s | %.2f\n", nomes[i], notas[i]);
+                    }
+                    printf("----------------------------------\n");
+                } else {
+                    printf("\nBoletim vazio.\n");
+                }
+                break;
+
+            default:
+                printf("\nOpcao invalida!\n");
+        }
+    }
+
     return 0;
 }
