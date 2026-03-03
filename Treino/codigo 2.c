@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int a;]
+    int a;
     printf("Digite o numero \n");
     scanf("%d",&a);
     

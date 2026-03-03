@@ -2,7 +2,7 @@
 
 int main() {
     int a; 
-    printf("Digite um valor dentre 1 a 100, e descubra qual time você pertence: \n")
+    printf("Digite um valor dentre 1 a 100, e descubra qual time você pertence: \n");
     scanf("%d",&a);
     
     if ( a >= 90 ){
