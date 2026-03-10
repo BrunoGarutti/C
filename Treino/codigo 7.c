@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 void organizavetor (int v[],int n){
-    int par = 0
+    int par = 0;
     int aux;
 
     for ( int i = 0 ; i < n ; i++ ){
         if ( v[i] % 2 == 0 ){
-            aux = v[];
-            v[] = v[par];
+            aux = v[i];
+            v[i] = v[par];
             v[par] = aux;
             
             par++;
@@ -17,7 +17,7 @@ void organizavetor (int v[],int n){
 
 int main(){
     int v[] = {3,5,2,8,1,10,4,7};
-    int n = 8
+    int n = 8;
 
     organizavetor(v,n);
 
@@ -25,7 +25,7 @@ int main(){
     for (int i = 0 ; i < n ; i++ ){
         printf("%d",v[i]);
     }
-    printf("\n")
+    printf(" \n");
 
     return 0;
 }
