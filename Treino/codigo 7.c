@@ -23,9 +23,9 @@ int main(){
 
     printf("O vetor organziado fica: \n");
     for (int i = 0 ; i < n ; i++ ){
-        printf("%d",v[i]);
+        printf(" %d",v[i]);
     }
-    printf(" \n");
+    printf("\n");
 
     return 0;
 }
